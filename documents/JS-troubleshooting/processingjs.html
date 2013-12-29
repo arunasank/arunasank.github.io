@@ -14,32 +14,31 @@
 <div class="contents"></div>
 <div id="section-1" class="sect"><div class="inner">
 <div class="hgroup"></div>
-<div class="region"><div class="contents"><div class="table"><div class="inner"><div class="region"><table class="table">
+<div class="region"><div class="contents"><div class="table"><div class="inner"><div class="region"><table class="table" style="border-style: solid;">
 <tr>
 <td><p class="p">Problem</p></td>
-<td><p class="p">Questions to ask yourself</p></td>
-<td><p class="p">Solution</p></td>
-<td><p class="p">Additional Comments</p></td>
+<td style="border-left-style: solid;"><p class="p">Solution</p></td>
 </tr>
 <tr>
-<td>
+<td style="border-top-style: solid;">
 <p class="p">Your program, when rendered on your local server looks like this: (My program is called jam_modulus):</p>
 <p class="p"><span class="media media-image"><img src="blank-screen.png" height="293" width="482" class="media media-inline" alt=""></span></p>
 </td>
-<td>
+<td style="border-top-style: solid;border-left-style: solid;">
 <p class="p">While writing the program in Java mode, have you used the size() function as defined below?</p>
 <p class="p"><span class=" cmd">size(width, height);</span></p>
+<p class="p">If you have used <span class=" cmd">width</span> or <span class=" cmd">height</span> in your <span class=" cmd">size()</span> function, replace your <span class=" cmd">size()</span> function with <span class=" cmd">size(window.innerWidth, window.innerHeight);</span></p>
+<div class="note" title="Note"><div class="inner"><div class="region"><div class="contents"><p class="p">When you do this, you'll get a warning about how you haven't defined dimensions for the size of your application. Remain unfazed, and click OK to see your application on the browser. If this does not work, there's a good chance that there's something syntactically wrong with your program, post a question on the #processing.js channel on irc.mozilla.org.</p></div></div></div></div>
 </td>
-<td><p class="p">If you have used <span class=" cmd">width</span> or <span class=" cmd">height</span> in your <span class=" cmd">size()</span> function, change it to <span class=" cmd">size(window.innerWidth, window.innerHeight);</span></p></td>
-<td><p class="p">When you do this, you'll get a warning about how you haven't defined dimensions for the size of your application. Remain unfazed, and click OK to see your application on the browser. If this does not work, there's a good chance that there's something syntactically wrong with your program so feel free to post a question the #processing.js channel on irc.mozilla.org. However, you should know that the channel is eerily quiet, in my timezone at least.</p></td>
 </tr>
 <tr>
-<td>
+<td style="border-top-style: solid;">
 <p class="p">Your program, when rendered on your local server, looks like this: (My program is called jam_modulus)</p>
 <p class="p"><span class="media media-image"><img src="cut-off-screen.png" height="293" width="482" class="media media-inline" alt=""></span></p>
+<p class="p">That is, only a small scrollable portion or part of your display is shown on the screen.</p>
 </td>
-<td>
-<p class="p">In the index.html file, make the following changes</p>
+<td style="border-top-style: solid;border-left-style: solid;">
+<p class="p">In the <span class=" file">web-export/index.html</span> file, make the following changes to change the percentage of the canvas that is displayed on the screen.</p>
 <div class="list"><div class="inner"><div class="region"><ul class="list">
 <li class="list">
 <p class="p">Remove this section(Lines 68 to 74):</p>
@@ -61,15 +60,6 @@
 </div>
 <div class="clear"></div>
 </div>
-<div class="footer"><div class="sect about ui-expander" role="contentinfo">
-<div class="yelp-data yelp-data-ui-expander" data-yelp-expanded="false"></div>
-<div class="inner">
-<div class="hgroup"><h2><span class="title">About</span></h2></div>
-<div class="region"><div class="contents"><div class="aboutblurb authors">
-<div class="title"><span class="title">Written By</span></div>
-<ul class="credits"><li>Aruna Sankaranarayanan</li></ul>
-</div></div></div>
-</div>
-</div></div>
+<div class="footer"></div>
 </div></body>
 </html>
