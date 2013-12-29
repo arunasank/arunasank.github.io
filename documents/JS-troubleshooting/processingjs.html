@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Processing JS troubleshooting</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><div class="page" role="main">
+<div class="header"></div>
+<div class="body">
+<div class="hgroup"><h1 class="title"><span class="title">Processing JS troubleshooting</span></h1></div>
+<div class="region">
+<div class="contents"></div>
+<div id="section-1" class="sect"><div class="inner">
+<div class="hgroup"></div>
+<div class="region"><div class="contents"><div class="table"><div class="inner"><div class="region"><table class="table">
+<tr>
+<td><p class="p">Problem</p></td>
+<td><p class="p">Questions to ask yourself</p></td>
+<td><p class="p">Solution</p></td>
+<td><p class="p">Additional Comments</p></td>
+</tr>
+<tr>
+<td>
+<p class="p">Your program, when rendered on your local server looks like this: (My program is called jam_modulus):</p>
+<p class="p"><span class="media media-image"><img src="blank-screen.png" height="293" width="482" class="media media-inline" alt=""></span></p>
+</td>
+<td>
+<p class="p">While writing the program in Java mode, have you used the size() function as defined below?</p>
+<p class="p"><span class=" cmd">size(width, height);</span></p>
+</td>
+<td><p class="p">If you have used <span class=" cmd">width</span> or <span class=" cmd">height</span> in your <span class=" cmd">size()</span> function, change it to <span class=" cmd">size(window.innerWidth, window.innerHeight);</span></p></td>
+<td><p class="p">When you do this, you'll get a warning about how you haven't defined dimensions for the size of your application. Remain unfazed, and click OK to see your application on the browser. If this does not work, there's a good chance that there's something syntactically wrong with your program so feel free to post a question the #processing.js channel on irc.mozilla.org. However, you should know that the channel is eerily quiet, in my timezone at least.</p></td>
+</tr>
+<tr>
+<td>
+<p class="p">Your program, when rendered on your local server, looks like this: (My program is called jam_modulus)</p>
+<p class="p"><span class="media media-image"><img src="cut-off-screen.png" height="293" width="482" class="media media-inline" alt=""></span></p>
+</td>
+<td>
+<p class="p">In the index.html file, make the following changes</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list">
+<p class="p">Remove this section(Lines 68 to 74):</p>
+<p class="p">
+	<span class=" code">&lt;h1&gt;jam_modulus&lt;/h1&gt;
+    	      &lt;p id="description"&gt;&lt;/p&gt;
+	      &lt;p id="sources"&gt;Source code: &lt;a href="jam_modulus.pde"&gt;jam_modulus&lt;/a&gt; &lt;/p&gt;
+	      &lt;p&gt;Built with &lt;a href="http://processing.org" title="Processing"&gt;Processing&lt;/a&gt; and &lt;a href="http://processingjs.org" title="Processing.js"&gt;Processing.js&lt;/a&gt;</span></p>
+</li>
+<li class="list">
+<p class="p">Replace the <span class=" code">#content</span> section(Lines 39 - 43) with:</p>
+<p class="p"><span class=" code">width: 100%; height:100%; min-width: 300px; overflow: auto;</span></p>
+</li>
+</ul></div></div></div>
+</td>
+</tr>
+</table></div></div></div></div></div>
+</div></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"><div class="sect about ui-expander" role="contentinfo">
+<div class="yelp-data yelp-data-ui-expander" data-yelp-expanded="false"></div>
+<div class="inner">
+<div class="hgroup"><h2><span class="title">About</span></h2></div>
+<div class="region"><div class="contents"><div class="aboutblurb authors">
+<div class="title"><span class="title">Written By</span></div>
+<ul class="credits"><li>Aruna Sankaranarayanan</li></ul>
+</div></div></div>
+</div>
+</div></div>
+</div></body>
+</html>

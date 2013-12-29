@@ -1,0 +1,53 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="topic" style="task"
+      id="processingjs"> >
+
+  <info>
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email its:translate="no">aruna.evam@gmail.com</email>
+    </credit>
+  </info>
+
+<title>Processing JS troubleshooting</title>
+
+<section id="section-1">
+  <table>
+  <tr>
+    <td><p>Problem</p></td>
+    <td><p>Questions to ask yourself</p></td>
+    <td><p>Solution</p></td>
+    <td><p>Additional Comments</p></td>
+  </tr>
+  <tr>
+    <td><p>Your program, when rendered on your local server looks like this: (My program is called jam_modulus):</p><p><media type="image" src="blank-screen.png" width="482" height="293"/></p></td>
+    <td><p>While writing the program in Java mode, have you used the size() function as defined below?</p>
+    <p><cmd>size(width, height);</cmd></p></td>
+    <td><p>If you have used <cmd>width</cmd> or <cmd>height</cmd> in your <cmd>size()</cmd> function, change it to <cmd>size(window.innerWidth, window.innerHeight);</cmd></p></td>
+    <td><p>When you do this, you'll get a warning about how you haven't defined dimensions for the size of your application. Remain unfazed, and click OK to see your application on the browser. If this does not work, there's a good chance that there's something syntactically wrong with your program so feel free to post a question the #processing.js channel on irc.mozilla.org. However, you should know that the channel is eerily quiet, in my timezone at least.</p></td>
+  </tr>
+  <tr>
+    <td><p>Your program, when rendered on your local server, looks like this: (My program is called jam_modulus)</p><p><media type="image" src="cut-off-screen.png" width="482" height="293"/></p></td>
+    <td><p>In the index.html file, make the following changes</p>
+    <list>
+      <item>
+        <p>Remove this section(Lines 68 to 74):</p>
+	<p>
+	<code><![CDATA[<h1>jam_modulus</h1>
+    	      <p id="description"></p>
+	      <p id="sources">Source code: <a href="jam_modulus.pde">jam_modulus</a> </p>
+	      <p>Built with <a href="http://processing.org" title="Processing">Processing</a> and <a href="http://processingjs.org" title="Processing.js">Processing.js</a>]]></code></p>
+      </item>
+      <item>
+        <p>Replace the <code>#content</code> section(Lines 39 - 43) with:</p>
+        <p><code><![CDATA[width: 100%; height:100%; min-width: 300px; overflow: auto;]]></code></p>
+      </item>
+    </list>
+    </td>
+  </tr>
+</table>
+</section>
+
+</page>
+
