@@ -1,20 +1,3 @@
-/*This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-	author:Aruna Sankaranarayanan
-	email:aruna.evam@gmail.com
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
-
-
 /* @pjs CardoR = "http://fonts.googleapis.com/css?family=Cardo"; */
 void setup()
 { 
@@ -44,6 +27,15 @@ void mousePressed()
     drawGreenSquares(getNumberInBox(mouseX, mouseY));
 }
 
+int initialScreenWidth()
+{
+  return (int) (displayWidth * 0.3);
+}
+
+int initialScreenHeight()
+{
+  return (int) (displayHeight * 0.3);
+}
 void fontFunction()
 {
   PFont cardoR = createFont("Cardo",width/40);
@@ -68,7 +60,7 @@ void fontFunction()
   text("right click.", 0.008136697 * width, height * 0.94211288);
   
   textFont(cardoR);
-  text("Pass to every ____ child", 0.715215622 * width, 0.05788712 * height);
+  text("Pass to every ____ child", 0.715215622 * width, 0.04341534 * height);
 }
 
 int gcd(int divided, int divisor)
