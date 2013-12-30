@@ -95,7 +95,7 @@ boolean mouseInBoxes()
   {
   case 1:
     if (totalBoxes >= 15)
-      boxColumn = 15 - 1;
+      boxColumn = 15 - 4;
     else
       boxColumn = ceil(totalBoxes) - 1;
     if (mousePressed && mouseX >= (0.803905614 * width) && mouseX <= (0.846216436 * width))
@@ -115,9 +115,9 @@ boolean mouseInBoxes()
     }
   case 2:
     if (totalBoxes >= 29)
-      boxColumn = 15 - 1;
+      boxColumn = 15 - 4;
     else
-      boxColumn = ceil(totalBoxes) - 14 - 2;
+      boxColumn = ceil(totalBoxes) - 14 - 4;
     if (mousePressed && mouseX >= (width * 0.868999186) && mouseX <= (width * 0.911310008))
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
@@ -135,9 +135,9 @@ boolean mouseInBoxes()
     }
   case 3:
     if (totalBoxes < 40)
-      boxColumn = ceil(totalBoxes) - 28 - 1;
+      boxColumn = ceil(totalBoxes) - 28 - 4;
     else
-      boxColumn = ceil(totalBoxes) - 28 - 1;
+      boxColumn = ceil(totalBoxes) - 28 - 4;
     if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
