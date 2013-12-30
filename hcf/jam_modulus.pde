@@ -97,7 +97,7 @@ boolean mouseInBoxes()
     if (totalBoxes >= 15)
       boxColumn = 15;
     else
-      boxColumn = totalBoxes;
+      boxColumn = ceil(totalBoxes);
     if (mousePressed && mouseX >= (0.803905614 * width) && mouseX <= (0.846216436 * width))
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
@@ -117,7 +117,7 @@ boolean mouseInBoxes()
     if (totalBoxes >= 29)
       boxColumn = 15;
     else
-      boxColumn = totalBoxes - 14;
+      boxColumn = ceil(totalBoxes) - 14;
     if (mousePressed && mouseX >= (width * 0.868999186) && mouseX <= (width * 0.911310008))
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
@@ -137,7 +137,7 @@ boolean mouseInBoxes()
     if (totalBoxes < 40)
       boxColumn = totalBoxes - 28;
     else
-      boxColumn = totalBoxes - 28;
+      boxColumn = ceil(totalBoxes) - 28;
     if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
@@ -181,7 +181,7 @@ void modulusBoxFunction()
 
   textAlign(NORMAL);
   textFont(cardoR);
-  for ( ; i <= totalBoxes ; i++)
+  for ( ; i < totalBoxes ; i++)
   {
     fill(49, 60, 83);
     rectMode(CORNER);
