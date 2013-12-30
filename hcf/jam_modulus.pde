@@ -97,7 +97,7 @@ boolean mouseInBoxes()
     if (totalBoxes >= 15)
       boxColumn = 15 - 4;
     else
-      boxColumn = ceil(totalBoxes) - 1;
+      boxColumn = ceil(totalBoxes) - 4;
     if (mousePressed && mouseX >= (0.803905614 * width) && mouseX <= (0.846216436 * width))
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
