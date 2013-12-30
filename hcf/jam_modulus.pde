@@ -94,7 +94,7 @@ boolean mouseInBoxes()
   switch(column)
   {
   case 1:
-    println("Column " + column);
+    //println("Column " + column);
     if (totalBoxes >= 15)
       boxColumn = 14;
     else
@@ -103,7 +103,7 @@ boolean mouseInBoxes()
     {
       for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
       {
-        println("Row " + i/(0.11577424 * height));
+        //println("Row " + i/(0.11577424 * height));
         if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
         {
           mouseInBoxFlag = true;
@@ -118,7 +118,7 @@ boolean mouseInBoxes()
     }
     column ++;
   case 2:
-    println("Column " + column);
+    //println("Column " + column);
     if (totalBoxes >= 29)
       boxColumn = 14;
     else
@@ -129,7 +129,7 @@ boolean mouseInBoxes()
       {
         if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
         {
-          println("Row " + i/(0.11577424 * height));
+      //    println("Row " + i/(0.11577424 * height));
           mouseInBoxFlag = true;
           break;
         }
@@ -142,7 +142,7 @@ boolean mouseInBoxes()
     }
     column ++;
   case 3:
-    println("Column " + column);
+    //println("Column " + column);
     boxColumn = 1;
     if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
     {
@@ -150,7 +150,7 @@ boolean mouseInBoxes()
       {
         if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
         {
-          println("Row " + i/(0.11577424 * height));
+      //    println("Row " + i/(0.11577424 * height));
           mouseInBoxFlag = true;
           break;
         }
