@@ -18,7 +18,6 @@
 /* @pjs CardoR = "http://fonts.googleapis.com/css?family=Cardo"; */
 void setup()
 { 
-//  size(initialScreenWidth(), initialScreenHeight());
   size(window.innerWidth, window.innerHeight);
   background(233, 233, 233);
   totalBoxes = (int)(0.008136697 * width);
@@ -27,7 +26,6 @@ void setup()
 
 void draw()
 {
-//  userDefinedSetup();
 }
 
 void mousePressed()
@@ -46,15 +44,6 @@ void mousePressed()
     drawGreenSquares(getNumberInBox(mouseX, mouseY));
 }
 
-int initialScreenWidth()
-{
-  return (int) (displayWidth * 0.45);
-}
-
-int initialScreenHeight()
-{
-  return (int) (displayHeight * 0.45);
-}
 void fontFunction()
 {
   PFont cardoR = createFont("Cardo",width/40);
@@ -192,7 +181,7 @@ void modulusBoxFunction()
 
   textAlign(NORMAL);
   textFont(cardoR);
-  for ( ; i < totalBoxes ; i++)
+  for ( ; i <= totalBoxes ; i++)
   {
     fill(49, 60, 83);
     rectMode(CORNER);
