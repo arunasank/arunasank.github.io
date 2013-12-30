@@ -101,7 +101,7 @@ boolean mouseInBoxes()
       boxColumn = totalBoxes - 1;
     if (mousePressed && mouseX >= (0.803905614 * width) && mouseX <= (0.846216436 * width))
     {
-      for (i = (0.11577424 * height); i <= ((boxColumn - 1) * 0.05788712 * height) ; i += (0.05788712 * height))
+      for (i = (0.11577424 * height); i <= ((boxColumn) * 0.05788712 * height) ; i += (0.05788712 * height))
       {
         //println("Row " + i/(0.11577424 * height));
         if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
@@ -125,7 +125,7 @@ boolean mouseInBoxes()
       boxColumn = totalBoxes - 15;
     if (mousePressed && mouseX >= (width * 0.868999186) && mouseX <= (width * 0.911310008))
     {
-      for (i = (0.11577424 * height); i <= ((boxColumn - 1) * 0.05788712 * height) ; i += (0.05788712 * height))
+      for (i = (0.11577424 * height); i <= ((boxColumn) * 0.05788712 * height) ; i += (0.05788712 * height))
       {
         if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
         {
@@ -146,7 +146,7 @@ boolean mouseInBoxes()
     boxColumn = 1;
     if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
     {
-      for (i = (0.11577424 * height); i <= ((boxColumn - 1) * 0.05788712 * height) ; i += (0.05788712 * height))
+      for (i = (0.11577424 * height); i <= ((boxColumn) * 0.05788712 * height) ; i += (0.05788712 * height))
       {
         if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
         {
