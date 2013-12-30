@@ -135,7 +135,7 @@ boolean mouseInBoxes()
     }
   case 3:
     if (totalBoxes < 40)
-      boxColumn = totalBoxes - 28;
+      boxColumn = ceil(totalBoxes) - 28;
     else
       boxColumn = ceil(totalBoxes) - 28;
     if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
@@ -151,8 +151,7 @@ boolean mouseInBoxes()
     }
     break;
   }
-  //  if (mousePressed && (get(mouseX, mouseY) == boxColour || get(mouseX, mouseY) == fontColour))
-  //    mouseInBoxFlag = true;
+
   return mouseInBoxFlag;
 }
 
