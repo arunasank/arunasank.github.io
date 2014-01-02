@@ -108,75 +108,79 @@ boolean mouseInBoxes()
 {
   float i = 0.05788712 * height;
   boolean mouseInBoxFlag = false;
+  color boxColour = color(49, 60, 83);
+  color boxNumber = color(240, 240, 240);
   int boxColumn;
   //  color boxColour = color(49, 60, 83);
   //  color fontColour = color(253,253,253);
-  int column = 1;
-  switch(column)
-  {
-  case 1:
-    if (totalBoxes >= 15)
-      boxColumn = 15;
-    else
-      boxColumn = ceil(totalBoxes);
-    if (mousePressed && mouseX >= (0.803905614 * width) && mouseX <= (0.846216436 * width))
-    {
-//      println(mouseX);
-      for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
-      {
-        if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
-        {
-          mouseInBoxFlag = true;
-          break;
-        }
-      }
-    }
-    if (totalBoxes <= 15)
-    {
-      break;
-    }
-  case 2:
-    if (totalBoxes >= 29)
-      boxColumn = 15;
-    else
-      boxColumn = ceil(totalBoxes) - 14;
-    if (mousePressed && mouseX >= (width * 0.868999186) && mouseX <= (width * 0.911310008))
-    {
-//      println(mouseX);
-      for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
-      {
-        if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
-        {
-          mouseInBoxFlag = true;
-          break;
-        }
-      }
-    }
-    if (totalBoxes < 30)
-    {
-      break;
-    }
-  case 3:
-    if (totalBoxes < 40)
-      boxColumn = ceil(totalBoxes) - 28;
-    else
-      boxColumn = ceil(totalBoxes) - 28;
-    if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
-    {
-//      println(mouseX);
-      for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
-      {
-        if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
-        {
-          mouseInBoxFlag = true;
-          break;
-        }
-      }
-    }
-    break;
-  }
-  //  if (mousePressed && (get(mouseX, mouseY) == boxColour || get(mouseX, mouseY) == fontColour))
-  //    mouseInBoxFlag = true;
+//  int column = 1;
+//  switch(column)
+//  {
+//  case 1:
+//    if (totalBoxes >= 15)
+//      boxColumn = 15;
+//    else
+//      boxColumn = ceil(totalBoxes);
+//    if (mousePressed && mouseX >= (0.803905614 * width) && mouseX <= (0.846216436 * width))
+//    {
+////      println(mouseX);
+//      for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
+//      {
+//        if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
+//        {
+//          mouseInBoxFlag = true;
+//          break;
+//        }
+//      }
+//    }
+//    if (totalBoxes <= 15)
+//    {
+//      break;
+//    }
+//  case 2:
+//    if (totalBoxes >= 29)
+//      boxColumn = 15;
+//    else
+//      boxColumn = ceil(totalBoxes) - 14;
+//    if (mousePressed && mouseX >= (width * 0.868999186) && mouseX <= (width * 0.911310008))
+//    {
+////      println(mouseX);
+//      for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
+//      {
+//        if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
+//        {
+//          mouseInBoxFlag = true;
+//          break;
+//        }
+//      }
+//    }
+//    if (totalBoxes < 30)
+//    {
+//      break;
+//    }
+//  case 3:
+//    if (totalBoxes < 40)
+//      boxColumn = ceil(totalBoxes) - 28;
+//    else
+//      boxColumn = ceil(totalBoxes) - 28;
+//    if (mousePressed && mouseX >= (width * 0.934092758) && mouseX <= (width * 0.97640358))
+//    {
+////      println(mouseX);
+//      for (i = (0.11577424 * height); i <= (boxColumn * 0.05788712 * height) ; i += (0.05788712 * height))
+//      {
+//        if (mousePressed && mouseY >= i && mouseY <= (i+ 0.04341534 * height) )
+//        {
+//          mouseInBoxFlag = true;
+//          break;
+//        }
+//      }
+//    }
+//    break;
+//  }
+//  //  if (mousePressed && (get(mouseX, mouseY) == boxColour || get(mouseX, mouseY) == fontColour))
+//  //    mouseInBoxFlag = true;
+  if(get(mouseX,mouseY) == boxColour || get(mouseX,mouseY) == boxNumber )
+    mouseInBoxFlag = true;
   return mouseInBoxFlag;
 }
 
@@ -217,7 +221,7 @@ void modulusBoxFunction()
     fill(49, 60, 83);
     rectMode(CORNER);
     rect(initialWidth, initialHeight, 0.040683483 * width, 0.04341534 * height);
-    fill(253, 253, 253);
+    fill(240, 240, 240);
     if (i<9)
 //      text(i+1, 0.820992677 * width, 0.15195369 * height);
         text(i+1, initialWidth + (0.017915309 * width), initialHeight + (0.0391884058 * height));
@@ -310,4 +314,5 @@ void userDefinedSetup()
     arclength += boxSize;
   }
 }
+
 
