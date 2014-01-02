@@ -4,7 +4,7 @@
     (at your option) any later version.
 
 	Author: Aruna Sankaranarayanan
-	Email: aaruna.evam@gmail.com
+	Email: aruna.evam@gmail.com
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
