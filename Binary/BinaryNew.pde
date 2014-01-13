@@ -4,7 +4,7 @@
  (at your option) any later version.
  
  	Author: Aruna Sankaranarayanan
- 	Email: aruna.evam@gmail.com
+ 	Email: aaruna.evam@gmail.com
  
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -218,7 +218,7 @@ void userDefinedSetup2()
   ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
   fill(0);
   //  triMode(CENTER);
-  triangle(width * 0.918633035 - 10, height - ( 4 * verticalSpace) + 10, width * 0.918633035 - 10, height - ( 4 * verticalSpace) - 10, width * 0.918633035 + 10, height - ( 4 * verticalSpace));
+  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
   fill(255, 255, 233);
   stroke(160, 160, 180);
 
@@ -422,7 +422,7 @@ void displayOneOrZero(boolean state, float posX, float posY)
     ellipseMode(RADIUS);
     ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
     fill(0);
-    triangle(width * 0.918633035 - 10, height - ( 4 * verticalSpace) + 10, width * 0.918633035 - 10, height - ( 4 * verticalSpace) - 10, width * 0.918633035 + 10, height - ( 4 * verticalSpace));
+    triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
     fill(255, 255, 233);
     stroke(160, 160, 180);
   }
@@ -533,8 +533,8 @@ void drawBoxes3()
     fill(0);
     text((int)B[i].cardState, ((0.284784378 * width) + (0.012205045 * width * (9-i))), ( 4 * verticalSpace));
   }
-  text("Score : ", width - 350, 4 * verticalSpace);
-  text(score, width - 200, 4 * verticalSpace);
+  text("Score : ", width - 0.284784378 * width, 4 * verticalSpace);
+  text(score, width - 0.16273393 * width, 4 * verticalSpace);
 
   if (translateVariable >= height - (verticalCardSize) || randomNumber == tempRandomNumber)
   {
