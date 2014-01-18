@@ -708,6 +708,7 @@ void mousePressedScreen4()
 
 void startScreen()
 {
+  numberOfCards = 10;
   if(translateVariable > width)
   {
     translateVariable = 0;
