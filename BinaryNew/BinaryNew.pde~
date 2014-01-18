@@ -1,4 +1,4 @@
-final int screen0 = 0;
+ final int screen0 = 0;
 final int screen1 = 1;
 final int screen2 = 2;
 final int screen3 = 3;
@@ -6,7 +6,6 @@ final int screen4 = 4;
 PShape snail;
 PShape grass;
 PShape train;
-PShape home;
 boolean[] setStateBinaryCard = {
   false, false, false, false, false, false, false, false, false, false
 };
@@ -23,70 +22,49 @@ void setup()
 //  size(screenWidth(), screenHeight());
   size(window.innerWidth, window.innerHeight);
   frameRate(60);
-
+  
   snail = loadShape("snail.svg");
   grass = loadShape("grass.svg");
   train = loadShape("train.svg");
-  home = loadShape("home.svg");
   startScreen();
-  //  sound1.setAttribute("src", "sound1.wav");
-  //  sound0.setAttribute("src", "sound0.wav");
+//  sound1.setAttribute("src", "sound1.wav");
+//  sound0.setAttribute("src", "sound0.wav");
 }
 void draw()
 {
-  float horizontalSpace = 0.016273393 * width;
-  float verticalSpace = 0.014423077 * height;
   switch(programState)
   {
   case screen0:
     programState = 0;
     startScreen();
-    shape(home, width - 5 * horizontalSpace, height - 10 * verticalSpace);
     break;
   case screen1:
-        programState = 1;
-        translateVariable = 0;
-        userDefinedSetup1();
-        shape(home, width - 5 * horizontalSpace, height - 10 * verticalSpace);
+    programState = 1;
+    userDefinedSetup1();
     break;
   case screen2:
-//    userDefinedSetup2();
-    shape(home, width - 5 * horizontalSpace, height - 10 * verticalSpace);
     break;
   case screen3:
     drawBoxes3();
-    shape(home, width - 5 * horizontalSpace, height - 10 * verticalSpace);
-//    shape(home, 2 * horizontalSpace, height - 0.192307692 * height, 0.081366965 * width, 0.192307692 * height);
     break;
   case screen4:
-    drawBoxes4();
+drawBoxes4();
     break;
   }
 }
 
 void mousePressed()
 {
-  float horizontalSpace = 0.016273393 * width;
-  float verticalSpace = 0.014423077 * height;
-  if(mouseX > width - 5 * horizontalSpace && mouseX < width - 5 * horizontalSpace + 58 && mouseY > height - 10 * verticalSpace && mouseY < height - 10 * verticalSpace + 58 && programState != 4)
-  {
-     programState = 0;
-  }
-  else if(mouseX > 2 * horizontalSpace && mouseX < 2 * horizontalSpace + 58 && mouseY > 0 && mouseY < 58 && programState == 4)
-  {
-    programState = 0;
-  }
   switch(programState)
   {
   case screen0:
-    mousePressedStartScreen();
-    //    translateVariable = 0;
-    //    userDefinedSetup1();
-    //    programState = screen1;
+    translateVariable = 0;
+    userDefinedSetup1();
+    programState = screen1;
     break;
   case screen1:
-//    userDefinedSetup2();
-//    programState = screen2;
+    userDefinedSetup2();
+    programState = screen2;
     break;
   case screen2:
     mouseInBoxes();
@@ -108,11 +86,6 @@ int screenWidth()
 int screenHeight()
 {
   return (int) 520;
-}
-
-public void resizeSketch()
-{
-    size($(window).width(), $(window).height());
 }
 
 int numberOfCards = 10;
@@ -225,10 +198,10 @@ void userDefinedSetup2()
   ellipseMode(RADIUS);
   stroke(0);
   fill(160, 160, 180);
-//  ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
+  ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
   fill(0);
   //  triMode(CENTER);
-//  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
+  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
   fill(255, 255, 233);
   stroke(160, 160, 180);
 
@@ -320,28 +293,28 @@ void mouseInBoxes()
       }
     }
   }
-//  if ((pow(mouseX -  horizontalSpace - width * 0.918633035, 2)/pow(0.040683483 * width/2, 2)) + (pow(mouseY - (height - 4 * verticalSpace), 2)/pow(0.096153846 * height/2, 2)) <= 1)
-//  {
-//    for (i =0; i<setStateBinaryCard.length; i++)
-//      setStateBinaryCard[i] = false;
-//    translateVariable = 0;
-//    if (programState == 2)
-//    {
-//      programState = 3;
-//      userDefinedSetup3();
-//    }
-//    else if (programState == 3)
-//    {
-//      programState = 4;
-//      level = 1;
-//      score = 0;
-//      translateVariable = 0;
-//      for (i =0; i<setStateBinaryCard.length; i++)
-//        setStateBinaryCard[i] = false;
-//      userDefinedSetup4();
-//    }
-//  }
-  if (pow(((mouseX - horizontalSpace - width * 0.016273393)/ (0.040683483 * width/2)), 2) + pow(((mouseY - (height - 4 * verticalSpace))/(0.096153846 * height/2)), 2) <= 1 && programState == 2)
+  if ((pow(mouseX -  horizontalSpace - width * 0.918633035, 2)/pow(0.040683483 * width/2, 2)) + (pow(mouseY - (height - 4 * verticalSpace), 2)/pow(0.096153846 * height/2, 2)) <= 1)
+  {
+    for (i =0; i<setStateBinaryCard.length; i++)
+      setStateBinaryCard[i] = false;
+    translateVariable = 0;
+    if (programState == 2)
+    {
+      programState = 3;
+      userDefinedSetup3();
+    }
+    else if (programState == 3)
+    {
+      programState = 4;
+      level = 1;
+      score = 0;
+      translateVariable = 0;
+      for (i =0; i<setStateBinaryCard.length; i++)
+        setStateBinaryCard[i] = false;
+      userDefinedSetup4();
+    }
+  }
+  else if (pow(((mouseX - horizontalSpace - width * 0.016273393)/ (0.040683483 * width/2)), 2) + pow(((mouseY - (height - 4 * verticalSpace))/(0.096153846 * height/2)), 2) <= 1 && programState == 2)
   {
     hintAlert();
   }
@@ -395,9 +368,9 @@ void displayOneOrZero(boolean state, float posX, float posY)
     fill(160, 160, 180);
     strokeWeight(3);
     ellipseMode(RADIUS);
-//    ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
+    ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
     fill(0);
-//    triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
+    triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
     fill(255, 255, 233);
     stroke(160, 160, 180);
   }
@@ -471,7 +444,7 @@ void userDefinedSetup3()
   ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
   fill(0);
   //  triMode(CENTER);
-//  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
+  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
   fill(255, 255, 233);
   stroke(160, 160, 180);
 }
@@ -498,10 +471,10 @@ void drawBoxes3()
   ellipseMode(RADIUS);
   stroke(0);
   fill(160, 160, 180);
-//  ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
+  ellipse(width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
   fill(0);
   //  triMode(CENTER);
-//  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
+  triangle(width * 0.918633035 - 0.008136697 * width , height - ( 4 * verticalSpace) + 0.019230769 * height, width * 0.918633035 - 0.008136697 * width, height - ( 4 * verticalSpace) - 0.019230769 * height, width * 0.918633035 + 0.008136697 * width, height - ( 4 * verticalSpace));
   fill(255, 255, 233);
   stroke(160, 160, 180);
   fill(0);
@@ -574,74 +547,10 @@ void hintAlert()
   popMatrix();
 }
 
-void mousePressedStartScreen()
-{
-  float horizontalSpace = width/3;
-  float verticalSpace = height/5;
-  background(255, 255, 233);
-  PFont Cardo = createFont("ribeye", width/40);
-  String[] textInRectangles = {
-    "PRACTICE", "GAME 1", "GAME 2", "HELP"
-  }; 
-
-  int i = 0;
-
-  if (mouseX >= 1.25 * horizontalSpace && mouseX <= 1.75 * horizontalSpace)
-  {
-    if (mouseY >= 0.75 * verticalSpace && mouseY <= 1.25 * verticalSpace)
-    {
-      programState = 2;
-      for (i =0; i<setStateBinaryCard.length; i++)
-        setStateBinaryCard[i] = false;
-      translateVariable = 0;
-      userDefinedSetup2();
-    }
-    else if (mouseY >= 1.75 * verticalSpace && mouseY <= 2.25 * verticalSpace)
-    {
-      programState = 3;
-      for (i =0; i<setStateBinaryCard.length; i++)
-        setStateBinaryCard[i] = false;
-      translateVariable = 0;
-      userDefinedSetup3();
-    }
-    else if (mouseY >= 2.75 * verticalSpace && mouseY <= 3.25 * verticalSpace)
-    {
-      programState = 4;
-//      drawBoxes4();
-//      programState = 4;
-      level = 1;
-      score = 0;
-      translateVariable = 0;
-      for (i =0; i<setStateBinaryCard.length; i++)
-        setStateBinaryCard[i] = false;
-      userDefinedSetup4();
-      //      shape(home, 2 * horizontalSpace, height - 0.192307692 * height, 0.081366965 * width, 0.192307692 * height);
-    }
-    else if (mouseY >= 3.75 * verticalSpace && mouseY <= 4.25 * verticalSpace)
-    {
-      programState = 1;
-      //      drawBoxes4();
-    } 
-    //  pushMatrix();
-    //  for( i = 1; i < 5; i++ )
-    //  {
-    //    strokeWeight(3);
-    //    stroke(160,160,180);
-    //    fill(0, 0, 0, 180);
-    //    rectMode(CENTER);
-    //    rect(1.5 * horizontalSpace, i * verticalSpace, horizontalSpace/2, verticalSpace/2);
-    //    textAlign(CENTER);
-    //    fill(255);
-    //    text(textInRectangles[i - 1], 1.5 * horizontalSpace, i * verticalSpace);
-    //  }
-    //  popMatrix();
-  }
-}
-
 void mousePressedScreen4()
 {
   int i;
-  float verticalSpace = 0.057692309 * height/4;
+  float verticalSpace = 0.02441009 * (width/4);
   float horizontalSpace = 0.016273393 * (width);
   float horizontalCardSize = ((width/1.1) - (6 * horizontalSpace))/numberOfCards;
   float verticalCardSize = (height/1.2 - ((20 * verticalSpace)))/2;
@@ -712,12 +621,10 @@ void startScreen()
   {
     translateVariable = 0;
   }
-  float horizontalSpace = width/3;
-  float verticalSpace = height/5;
+  float horizontalSpace = 0.016273393 * width;
+  float verticalSpace = 0.014423077 * height;
   background(255, 255, 233);
-  PFont Cardo = createFont("ribeye", width/50);
-//  PShape home = loadShape("home.svg");
-  String[] textInRectangles = {"PRACTICE", "GAME 1", "GAME 2", "HELP"}; 
+  PFont Cardo = createFont("ribeye", width/40);
   int i = 0;
   while (i < width)
   {
@@ -727,41 +634,19 @@ void startScreen()
     i += 0.647681041 * width/2;
   }
   shape(snail,translateVariable, height - (2.023076923 * height)/3, (0.60537022 * width)/3, (2.023076923 * height)/3);
-//  shape(home, width * 0.918633035, height - ( 4 * verticalSpace), 0.040683483 * width/2, 0.096153846 * height/2);
-  
-  pushMatrix();
-  textFont(Cardo);
-  for( i = 1; i < 5; i++ )
-  {
-    strokeWeight(3);
-    stroke(160,160,180);
-    fill(0, 0, 0, 180);
-    rectMode(CENTER);
-    rect(1.5 * horizontalSpace, i * verticalSpace, horizontalSpace/2, verticalSpace/2);
-    textAlign(CENTER);
-    fill(255);
-    text(textInRectangles[i - 1], 1.5 * horizontalSpace, i * verticalSpace);
-  }
-  popMatrix();
-  rectMode(CORNER);
+
+  textFont(Cardo);  
+  //  fill(153, 204, 153);
+  fill(0);
+  text("Hi, I am Binns, the binary bug.", 12 * horizontalSpace, 8 * verticalSpace);
+  textAlign(CENTER, CENTER);
+  text("This activity will teach you to count in Binary.", width/2, 20 * verticalSpace);
+  text("Let's Begin!", width/2, 28 * verticalSpace); 
+  text("Read the instructions in SCREEN 1.", width/2, 36 * verticalSpace);
+  text("Practise in SCREEN 2.", width/2, 44 * verticalSpace);
+  text("PLAY in SCREEN 3.", width/2, 52 * verticalSpace);
+  text("Click me to go to the next screen.", width/2, 60 * verticalSpace);
   textAlign(NORMAL);
-  
-  
-//  
-//  textAlign(CENTER);
-//  text("PRACTISE", 1.5 * horizontalSpace, verticalSpace, horizontalSpace/2, verticalSpace/2);
-//  text("PLAY", 1.5 * horizontalSpace, verticalSpace, horizontalSpace/2, verticalSpace/2
-//  //  fill(153, 204, 153);
-//  fill(0);
-//  text("Hi, I am Binns, the binary bug.", 12 * horizontalSpace, 8 * verticalSpace);
-//  textAlign(CENTER, CENTER);
-//  text("This activity will teach you to count in Binary.", width/2, 20 * verticalSpace);
-//  text("Let's Begin!", width/2, 28 * verticalSpace); 
-//  text("Read the instructions in SCREEN 1.", width/2, 36 * verticalSpace);
-//  text("Practise in SCREEN 2.", width/2, 44 * verticalSpace);
-//  text("PLAY in SCREEN 3.", width/2, 52 * verticalSpace);
-//  text("Click me to go to the next screen.", width/2, 60 * verticalSpace);
-//  textAlign(NORMAL);
   if (frameCount % 2 == 0)
   {
     translateVariable +=8 * random(1);
@@ -801,12 +686,11 @@ void drawBoxes4()
   int i;
   background(255, 255, 233);
   //  int horizontalMultiplier;
-  float verticalSpace = 0.057692309 * height/4;
+  float verticalSpace = 0.02441009 * (width/4);
   float horizontalSpace = 0.016273393 * (width);
   float horizontalCardSize = ((width/1.1) - (6 * horizontalSpace))/numberOfCards;
   float verticalCardSize = (height/1.2 - ((20 * verticalSpace)))/2;
   PFont Cardo = createFont("ribeye", width/40);
-  shape(home, 2 * horizontalSpace, 0);
   textFont(Cardo);
   translate(horizontalSpace, 0);
   translate(0, verticalSpace * 7);
@@ -817,7 +701,7 @@ void drawBoxes4()
     BinaryCard b = new BinaryCard(horizontalCardSize, verticalCardSize, (int)pow(2, i), (numberOfCards - 1 - i) * (horizontalSpace + horizontalCardSize), verticalSpace, setStateBinaryCard[i], 1);
     B[i] = b;
     B[i].displayCard(false);
-    verticalSpace = 0.057692309 * height/4;
+    verticalSpace = 0.02441009 * (width/4);
     pushMatrix();
     strokeWeight(3);
     ellipseMode(RADIUS);
@@ -829,6 +713,7 @@ void drawBoxes4()
     translate(-4 * horizontalSpace, 0);
     popMatrix();
   }
+  //  int trainNumber = (int)random(1023);
   fill(0);
   strokeWeight(3);
   triangle(width - 4.5 * horizontalSpace, verticalSpace, width - 4.75 * horizontalSpace, verticalCardSize/2, width - 4.25 * horizontalSpace, verticalCardSize/2);
@@ -847,7 +732,7 @@ void drawBoxes4()
 }
 void callTrain(int trainNumber)
 {
-  float verticalSpace = 0.057692309 * height/4;
+  float verticalSpace = 0.02441009 * (width/4);
   float horizontalSpace = 0.016273393 * (width);
   float verticalCardSize = (height/1.2 - ((20 * verticalSpace)))/2;
   int i;

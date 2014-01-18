@@ -46,11 +46,32 @@
 			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
 		<![endif]-->
 		<script src="processing.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript">
 // convenience function to get the id attribute of generated sketch html element
 function getProcessingSketchId () { return 'BinaryNew'; }
 </script>
+	  <script>
+      var pjs;
 
+      $(document).ready(function() {
+        getPjsInstance();
+      });
+
+      // obtain a reference to the processing sketch
+      function getPjsInstance() {
+        var bound = false;
+        pjs = Processing.getInstanceById('BinaryNew');
+        if(pjs != null)
+          bound = true;
+        if(!bound)
+          setTimeout(getPjsInstance, 250);
+      }
+
+	  $(window).resize(function() {
+		  pjs.resizeSketch();
+		});
+    </script>
 	</head>
 	<body>
 		<div id="content">
