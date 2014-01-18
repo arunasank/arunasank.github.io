@@ -823,7 +823,7 @@ void drawBoxes4()
     strokeWeight(3);
     ellipseMode(RADIUS);
     translate(4 * horizontalSpace, 0);
-    ellipse((numberOfCards - 1 - i) * (horizontalSpace + horizontalCardSize), verticalSpace + verticalCardSize * 2.5, horizontalCardSize/4, horizontalCardSize/4);
+      ellipse((numberOfCards - 1 - i) * (horizontalSpace + horizontalCardSize), verticalSpace + verticalCardSize * 2.5, horizontalCardSize/4, horizontalCardSize/4);
     textAlign(CENTER);
     B[i].fontFunction((numberOfCards - 1 - i) * (horizontalSpace + horizontalCardSize), verticalSpace + verticalCardSize * 2.95);
     textAlign(NORMAL);
