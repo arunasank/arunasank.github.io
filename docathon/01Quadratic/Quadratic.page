@@ -1,0 +1,318 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="topic"
+      id="quadratic">
+
+  <info>
+    <link type="guide" xref="index"/>
+
+    <revision version="1.0" date="26-01-2014" status="draft"/>
+
+    <credit type="author copyright">
+      <name>FSMK Docathon, January 2013</name>
+      <email its:translate="no">fsmk-docathon@googlegroups.com</email>
+      <years>2013</years>
+    </credit>
+
+    <desc>Find and output all the roots of a given quadratic equation, for nonzero coefficients.</desc>
+  </info>
+
+  <title>Roots of a Quadratic Equation</title>
+  <p>The following program can be used to find and print the roots of a valid quadratic equation.</p>
+<section id="Summary">
+  <title>Summary</title>
+
+  <p>Any quadratic equation, <file>ax² + bx + c = 0</file> has two roots, say α and β.</p>
+  <list>
+  <title>The roots of the equation are given by:</title>
+    <item>
+      <p><file>α = (-b + √D)/2a</file> and <file>β =(-b - √D)/2a</file></p>
+    </item>
+    <item>
+      <p><em>Discriminant</em> D = b² - 4ac</p>
+      <list>
+        <title>Properties of the Discriminant D</title>
+	<item>
+	  <p>If <file>D = 0</file>, <file>α = β</file>.</p>
+	</item>
+	<item>
+	  <p>If <file>D &gt; 0</file>, <file>α</file> and <file>β</file> are distinct and real.</p>
+	</item>
+	<item>
+	  <p>If <file>D &lt; 0</file>, <file>α</file> and <file>β</file> are distinct and imaginary.</p>
+	</item>
+      </list>
+    </item>
+  </list>
+
+</section>
+
+<section id="algorithm">
+  <title>Algorithm</title>
+
+  <p>You can follow this algorithm to find the roots of a quadratic equation.</p>
+
+  <list type="numbered">
+    <item>
+      <p>Start.</p>
+    </item>
+    <item>
+      <p>User input: Coefficients a, b, and c.</p>
+    </item>
+    <item>
+      <p>Validate a: If <file>a = 0</file>, print an error message and go to step 9, else continue.</p>
+    </item>
+    <item>
+      <p>If <file>a ≠ 0</file>, calculate <file>D = b² - 4ac</file>.</p>
+    </item>
+    <item>
+      <p>If <file>D = 0</file>, <file>α = β = (-b/2a)</file>.</p>
+    </item>
+    <item>
+      <p>Else, if <file>D &gt; 0</file>, roots <file>α = (-b + √D)/2a</file> and <file>β =(-b - √D)/2a</file>.</p>
+    </item>
+    <item>
+      <p>Else, if <file>D &lt; 0</file>, roots <file>α = (-b + √Di)/2a</file> and
+      <file>β =(-b - √Di)/2a</file>, where D is the absolute value of the
+      discriminant.</p>.
+    </item>
+    <item>
+      <p>Print the roots of the quadratic equation.</p>
+    </item>
+    <item>
+      <p>Stop.</p>
+    </item>
+  </list>
+</section>
+
+<section id="code">
+  <title>Program</title>
+
+  <code><![CDATA[
+
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<math.h>
+
+    int main()
+    {
+      float a,b,c,desc,x1,x2,r;
+
+      // taking the inputs
+      printf("Enter the co-efficient of a,b,c\n");
+      scanf("%f%f%f",&a,&b,&c);
+
+      if(a==0)
+
+          // Executes if the equation is linear
+    	  printf("Not a valid quadratic equation\n");
+      else
+      {
+          // Executes for quadratic equation
+          desc=(b*b-4*a*c);
+
+          // loop computing equal roots
+          if(desc==0)
+          {
+             // Computation for equal roots
+    	     x1=x2=(-b/2*a);
+
+	         // printing equal roots
+    	     printf("Roots are equal and they are\n");
+             printf("Root 1= %f and Root 2= %f\n",x1,x2);
+
+          }
+
+          // loop computing distinct roots
+          else if(desc>0)
+          {
+
+            //Computation for distinct roots
+         	x1=(-b+sqrt(desc))/(2*a);
+        	x2=(-b-sqrt(desc))/(2*a);
+
+        	// printing distinct roots
+        	printf("Roots are real and distinct and they are\n");
+    	    printf("Root 1= %f and Root 2= %f\n",x1,x2);
+
+          }
+
+          // loop computing imaginary roots
+          else
+          {
+            // computing real part
+    	    x1=(-b/2*a);
+        	desc*=-1;
+
+        	// computing imaginary part
+        	r=sqrt(desc)/(2*a);
+
+        	// printing imaginary roots
+        	printf("Roots are imaginary and they are\n");
+        	printf("Root 1= %f+i%f\n",x1,r);
+        	printf("Root 2= %f-i%f",x1,r);
+
+          }
+       }
+       return 0;
+    }
+]]></code>
+
+</section>
+
+
+<section id="output">
+  <title>Output</title>
+    <p>Run the following commands in your terminal:</p>
+    <screen>
+    <output style="prompt">$</output><input>gcc –lm roots.c</input>
+    <output style="prompt">$</output><input>./a.out</input>
+    <output>Enter the coefficients of a,b,c</output>
+    <output>1 -4 4</output>
+    <output>Roots are equal and they are</output>
+    <output>Root1 = 2.000000 and Root2 = 2.000000</output>
+    </screen>
+
+    <screen>
+    <output style="prompt">$</output><input>gcc –lm roots.c</input>
+    <output style="prompt">$</output><input>./a.out</input>
+    <output>Enter the coefficients of a,b,c</output>
+    <output>1 -5 6</output>
+    <output>The Roots are Real and distinct and they are</output>
+    <output>Root1 = 3.000000 and Root2 = 2.000000</output>
+    </screen>
+
+    <screen>
+    <output style="prompt">$</output><input>gcc –lm roots.c</input>
+    <output style="prompt">$</output><input>./a.out</input>
+    <output>Enter the coefficients of a,b,c</output>
+    <output>1 3 3</output>
+    <output>The Roots are imaginay and they are</output>
+    <output>Root1 = -1.500000+i0.866025</output>
+    <output>Root2 = -1.500000-i0.866025</output>
+    </screen>
+
+</section>
+
+</page>
+
+
+
+<!--
+## Algorithm:
+2. Take inputs i.e. coefficient of a, b, and c.
+3. When co-efficient a is 0 print error message and go to step 12, else to step 4
+4. When coefficient of a is not 0, calculate discriminant
+<pre><code>desc= b*b-4ac</code></pre>
+5. When desc=0, go to step 6 else go to step 7.
+6. The roots are real and equal, roots are
+<pre><code>x1=x2=-b/2a</pre></code>
+go to step 11.
+7. When desc greater than 0 go to step 8, else to step 9
+8. The roots are real and distinct,Roots are
+<pre><code>x1=(-b+sqrt(desc))/2a,
+x2=(-b-sqrt(desc))/2a</code></pre>
+go to step 11.
+9. When desc lesser than 0 go to step 10.
+10. The roots are real and imaginary,roots are
+<pre><code>x1=p + iq,
+x2= p –iq</pre></code>
+go to step 11.
+11. Print roots of given equation.
+12. Stop.
+
+## Program: roots.c
+
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<math.h>
+
+    int main()
+    {
+      float a,b,c,desc,x1,x2,r;
+
+      // taking the inputs
+      printf("Enter the co-efficient of a,b,c\n");
+      scanf("%f%f%f",&a,&b,&c);
+
+      if(a==0)
+
+          // Executes if the equation is linear
+    	  printf("Not a valid quadratic equation\n");
+      else
+      {
+          // Executes for quadratic equation
+          desc=(b*b-4*a*c);
+
+          // loop computing equal roots
+          if(desc==0)
+          {
+             // Computation for equal roots
+    	     x1=x2=(-b/2*a);
+
+	         // printing equal roots
+    	     printf("Roots are equal and they are\n");
+             printf("Root 1= %f and Root 2= %f\n",x1,x2);
+
+          }
+
+          // loop computing distinct roots
+          else if(desc>0)
+          {
+
+            //Computation for distinct roots
+         	x1=(-b+sqrt(desc))/(2*a);
+        	x2=(-b-sqrt(desc))/(2*a);
+
+        	// printing distinct roots
+        	printf("Roots are real and distinct, they are\n");
+    	    printf("Root 1= %f and Root 2= %f\n",x1,x2);
+
+          }
+
+          // loop computing imaginary roots
+          else
+          {
+            // computing real part
+    	    x1=(-b/2*a);
+        	desc*=-1;
+
+        	// computing imaginary part
+        	r=sqrt(desc)/(2*a);
+
+        	// printing imaginary roots
+        	printf("Roots are imaginary and they are\n");
+        	printf("Root 1= %f+i%f\n",x1,r);
+        	printf("Root 2= %f-i%f",x1,r);
+
+          }
+       }
+       return 0;
+    }
+
+
+## Output:
+
+Run the following commands in your terminal:<br>
+####gcc –lm roots.c<br>
+####./a.out<br>
+Enter the coefficients of a,b,c<br>
+       1 -4 4<br>
+Roots are equal and the they are<br>
+Root1 = 2.000000 and Root2 = 2.000000<br>
+
+
+####gcc –lm roots.c<br>
+####./a.out<br>
+Enter the coefficients of a,b,c<br>
+1 -5 6<br>
+The Roots are Real and distinct, they are<br>
+Root1 = 3.000000 and Root2 = 2.000000<br>
+
+####gcc –lm roots.c<br>
+####./a.out<br>
+Enter the coefficients of a,b,c<br>
+ 	1 3 3<br>
+The Roots are imaginary and they are<br>
+Root1 = -1.500000+i0.866025<br>
+Root2 = -1.500000-i0.866025<br>-->
