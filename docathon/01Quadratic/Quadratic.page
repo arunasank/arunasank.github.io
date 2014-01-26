@@ -52,7 +52,7 @@
 
   <p>You can follow this algorithm to find the roots of a quadratic equation.</p>
 
-  <list type="numbered">
+  <steps>
     <item>
       <p>Start.</p>
     </item>
@@ -82,7 +82,7 @@
     <item>
       <p>Stop.</p>
     </item>
-  </list>
+  </steps>
 </section>
 
 <section id="code">
