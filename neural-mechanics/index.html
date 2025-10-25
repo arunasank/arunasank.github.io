@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Neural Mechanics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    header img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+    }
+
+    a {
+      color: #0055a4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Table styling for lectures */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    /* Staff grid (Instructor + TAs) */
+    .staff {
+      margin-bottom: 20px;
+    }
+
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 6px;
+      align-items: start;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
+
+    .staff-card {
+      text-align: center;
+      width: 100px;
+      /* same as your grid min size */
+      margin: 0 auto;
+      /* centers the whole card in its grid cell */
+      text-align: center;
+
+    }
+
+    .staff-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .staff-card img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+    }
+
+    .staff-card .name {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    .staff-card .role {
+      margin: 2px 0 0;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="imgs/ne.png" alt="Northeastern Logo">
+    <h1>Neural Mechanics</h1>
+  </header>
+  <h3>Northeastern University, Spring 2026</h3>
+
+  <section class="staff">
+
+    <div class="staff-grid">
+      <!-- Instructor -->
+      <figure class="staff-card">
+        <img src="imgs/staff/david.webp" alt="David Bau" loading="lazy">
+        <figcaption>
+          <div class="name">Prof. David <br>Bau</div>
+          <div class="role">Instructor</div>
+        </figcaption>
+      </figure>
+
+      <!-- TAs -->
+      <figure class="staff-card">
+        <img src="imgs/staff/np.jpg" alt="Nikhil Prakash" loading="lazy">
+        <figcaption>
+          <div class="name">Nikhil <br>Prakash</div>
+          <div class="role">Staff</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>Instructor</h2>
+    <p><a href="https://baulab.info/">David Bau</a><br>
+      Email: <a href="mailto:davidbau@northeastern.edu">davidbau@northeastern.edu</a></p>
+    <h2>Staff</h2>
+    <p><a href="https://nix07.github.io/">Nikhil Prakash</a><br>
+      Email: <a href="mailto:prakash.nik@northeastern.edu">prakash.nik@northeastern.edu</a></p>
+  </section>
+
+  <section>
+    <h2>Course Description</h2>
+    <p>
+      Modern AI systems (like large language models) are incredibly powerful but also <i>mysteriously</i> opaque: they work astonishingly well, yet even the engineers who build them don’t fully understand what the billions of artificial “neurons” are actually doing inside. This class focuses on post-hoc interpretability, trying to understand trained models after the fact, like a biologist studying a complex organism. Instead of simplifying the model to make it human-readable, we will probe existing neural networks to uncover <i>what internal structures, features, or "concepts"</i> they’ve learned, and how those parts combine to produce behavior. 
+    </p>
+
+    <h2>Course Goals</h2>
+    <p>
+      The goal of this class is to work towards a research paper production for the Neurips main conference. We will create groups of inter-disciplinary (non CS) PhD students, with PhD students in interpretability to localize LLM concepts that are often overlooked by interpretability researchers. 
+    </p>
+  </section>
+
+  <section>
+    <h2>Pre-requisites</h2>
+    <p> For this class, it would be useful to be familiar with: linear algebra, training ML models, python programming, probability, differential calculus, distributed vector representations, pytorch.</p>
+  </section>
+
+
+  <section>
+    <h2>Schedule</h2>
+    <p>
+      <strong>Lectures:</strong> <br>
+      <strong>Location:</strong> 
+    </p>
+  </section>
+
+  <!-- New Lectures section -->
+  <section>
+    <h2>Lectures & Lecture Notes</h2>
+
+    This schedule is provisional and subject to change.
+
+    <table>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Tuesday (Date)</th>
+          <th>Thursday (Date)</th>
+          <th>Assignments / Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Weeks 1–3 -->
+        <tr>
+          <td>0</td>
+          <td>Lecture Zero<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Benchmarking<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Steering<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Representation Visualization<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Causation, patching.  Counterfactual dataset development.  Causal abstraction.<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Model components.  Circuits, minimality, faithfulness, carrying information.<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Supplementary models.  Probes, masks, DAS, REFT.<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Generalization - paper review, other results that have been found.<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Specificity - more paper review<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Input attribution / salience<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Skepticism.  Interpretability illusions.<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Locating your concept in the overall atlas. Sanity tests. Bridging the human-AI knowledge gap.<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Project presentations<br><a href="">(notes)</a><br><small>date</small>
+          </td>
+          <td><small>date</small></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </section>
+
+  <section>
+    <h2> Grading </h2>
+
+    <h3>AI Tools Policy</h3>
+  </section>
+
+  <section>
+    <h2>Office Hours</h2>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+      <tr>
+        <th>Names</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>David</td>
+        <td>Day</td>
+        <td>Time</td>
+        <td>Location</td>
+      </tr>
+      <tr>
+        <td>Nikhil</td>
+        <td>Day</td>
+        <td>Time</td>
+        <td>Location</td>
+      </tr>
+    </table>
+
+  </section>
+
+  <section>
+    <h2>Materials and Expectations</h2>
+  </section>
+
+</body>
+
+</html>
+
